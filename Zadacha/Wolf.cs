@@ -11,23 +11,21 @@ public class Wolf : IPredator
         Speed = rnd.Next(100, speed);
     }
 
-    public bool CanMate { get; set; }
-    public bool HasMated { get; set; }
+    private bool CanMate { get; set; }
+    private bool HasMated { get; set; }
     public int Speed { get; set; }
     public bool IsFed { get; set; }
 
     public void Eat()
     {
-        IsFed = true;
+        this.IsFed = true;
     }
 
     public void Chase(IPrey prey)
     {
-        if (this.Speed > prey.Speed)
-        {
-            Deer.DeerPoplationMinus();
-            this.Eat();
-        }
+        if (this.Speed <= prey.Speed) return;
+        Deer.DeerPoplationMinus();
+        this.Eat();
     }
     public void Mate(Wolf predator2)
     {
@@ -44,15 +42,13 @@ public class Wolf : IPredator
 
         if ((CanMate && predator2.CanMate) && (!HasMated && !predator2.HasMated))
         {
-            if (IsFed && predator2.IsFed)
-            {
-                var averageSpeedFromParents = (Speed + predator2.Speed) / 2;
-                var _rnd = new Random();
-                var step = _rnd.Next(-5, 5);
-                var kidSpeed = averageSpeedFromParents + step;
-                var kid = new Wolf(kidSpeed);
-                wolvesPopulation++;
-            }
+            if (!IsFed || !predator2.IsFed) return;
+            int averageSpeedFromParents = (Speed + predator2.Speed) / 2;
+            Random _rnd = new Random();
+            int step = _rnd.Next(-5, 5);
+            int kidSpeed = averageSpeedFromParents + step;
+            Wolf kid = new Wolf(kidSpeed);
+            wolvesPopulation++;
         }
         else if (CanMate == false || predator2.CanMate == false)
         {

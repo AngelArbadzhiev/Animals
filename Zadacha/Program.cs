@@ -4,8 +4,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Habitat habitat = new Habitat(1500);
+        Habitat habitat = new Habitat(1500,true);
         habitat.GenerateAnimals();
-        habitat.ReturnPopulation();
+        Habitat.ReturnPopulation();
     }
 }

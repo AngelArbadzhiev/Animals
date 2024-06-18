@@ -19,7 +19,7 @@ public class Deer : IPrey
     public void Eat()
     {
         IsFed = true;
-        Habitat.GrassMinus();
+        Habitat.LowerGrass();
     }
     public static void DeerPoplationMinus()
     {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/gikn/Desktop/Zadacha/Zadacha/Zadacha.csproj": {}
+    "/home/angel/Downloads/Zadacha/Zadacha/Zadacha.csproj": {}
   },
   "projects": {
-    "/home/gikn/Desktop/Zadacha/Zadacha/Zadacha.csproj": {
+    "/home/angel/Downloads/Zadacha/Zadacha/Zadacha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gikn/Desktop/Zadacha/Zadacha/Zadacha.csproj",
+        "projectUniqueName": "/home/angel/Downloads/Zadacha/Zadacha/Zadacha.csproj",
         "projectName": "Zadacha",
-        "projectPath": "/home/gikn/Desktop/Zadacha/Zadacha/Zadacha.csproj",
-        "packagesPath": "/home/gikn/.nuget/packages/",
-        "outputPath": "/home/gikn/Desktop/Zadacha/Zadacha/obj/",
+        "projectPath": "/home/angel/Downloads/Zadacha/Zadacha/Zadacha.csproj",
+        "packagesPath": "/home/angel/.nuget/packages/",
+        "outputPath": "/home/angel/Downloads/Zadacha/Zadacha/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gikn/.nuget/NuGet/NuGet.Config"
+          "/home/angel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -48,12 +48,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.6, 8.0.6]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/current/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
