@@ -6,6 +6,8 @@ internal class Program
     {
         Habitat habitat = new Habitat(1500,true);
         habitat.GenerateAnimals();
-        Habitat.ReturnPopulation();
+        habitat.SeasonSimulator();
+        var listDeerCount = habitat.ListDeer.Count;
+        Console.WriteLine(listDeerCount);
     }
 }

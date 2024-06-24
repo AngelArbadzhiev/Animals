@@ -8,7 +8,8 @@ public class Wolf : IPredator
     {
         IsFed = false;
         var rnd = new Random();
-        Speed = rnd.Next(100, speed);
+        Speed = rnd.Next(101, speed);
+        this.CanMate = rnd.Next(0, 101) < 85 ? CanMate = true : CanMate = false;
     }
 
     private bool CanMate { get; set; }
@@ -24,22 +25,11 @@ public class Wolf : IPredator
     public void Chase(IPrey prey)
     {
         if (this.Speed <= prey.Speed) return;
-        Deer.DeerPoplationMinus();
+        Deer.DeerPopulationMinus();
         this.Eat();
     }
     public void Mate(Wolf predator2)
     {
-        var rnd = new Random();
-        if (rnd.Next(0, 101) < 85)
-        {
-            CanMate = true;
-            predator2.CanMate = rnd.Next(0, 101) < 85 ? CanMate = true : CanMate = false;
-        }
-        else
-        {
-            CanMate = false;
-        }
-
         if ((CanMate && predator2.CanMate) && (!HasMated && !predator2.HasMated))
         {
             if (!IsFed || !predator2.IsFed) return;
