@@ -47,7 +47,7 @@ public class Habitat
 
         for (var k = 0; k < 20; k++)
         {
-            var wolf = new Wolf(_rnd.Next(102, 105));
+            var wolf = new Wolf(_rnd.Next(101, 105));
             _listWolves.Add(wolf);
         }
     }

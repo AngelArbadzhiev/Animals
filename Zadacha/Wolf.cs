@@ -3,12 +3,12 @@ namespace Zadacha;
 public class Wolf : IPredator
 {
     private static int wolvesPopulation = 20;
+    Random rnd = new Random();
 
     public Wolf(double speed)
     {
         IsFed = false;
-        var rnd = new Random();
-        Speed = rnd.Next(102, (int)speed);
+        Speed = rnd.Next(101, (int)speed);
         CanMate = rnd.Next(0, 101) < 70 ? CanMate = true : CanMate = false;
     }
 
@@ -19,12 +19,12 @@ public class Wolf : IPredator
 
     public void Eat()
     {
-        IsFed = true;
+        this.IsFed = true;
     }
 
     public void Chase(IPrey prey)
     {
-        if (Speed <= prey.Speed) return;
+        if (this.Speed <= prey.Speed) return;
         Deer.DeerPopulationMinus();
         Eat();
     }
