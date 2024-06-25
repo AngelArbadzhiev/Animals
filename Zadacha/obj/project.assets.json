@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/angel/.nuget/packages/": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/angel/Downloads/Zadacha/Zadacha/Zadacha.csproj",
+      "projectUniqueName": "/workspaces/Animals/Zadacha/Zadacha.csproj",
       "projectName": "Zadacha",
-      "projectPath": "/home/angel/Downloads/Zadacha/Zadacha/Zadacha.csproj",
-      "packagesPath": "/home/angel/.nuget/packages/",
-      "outputPath": "/home/angel/Downloads/Zadacha/Zadacha/obj/",
+      "projectPath": "/workspaces/Animals/Zadacha/Zadacha.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/Animals/Zadacha/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/angel/.nuget/NuGet/NuGet.Config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,6 +38,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -54,18 +59,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.6, 8.0.6]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.106/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

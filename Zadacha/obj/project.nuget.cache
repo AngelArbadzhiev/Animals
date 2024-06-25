@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yDKgIlYMMuqrV0i75lXpswmgiRpe34ajjPkLE7LJ5h43YVQZdmZzINCTJSup8BtKWAB9QaSAlMnjn4RprtxCyg==",
+  "dgSpecHash": "iXSD+NJiGtA=",
   "success": true,
-  "projectFilePath": "/home/angel/Downloads/Zadacha/Zadacha/Zadacha.csproj",
-  "expectedPackageFiles": [
-    "/home/angel/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.6/microsoft.aspnetcore.app.ref.8.0.6.nupkg.sha512"
-  ],
+  "projectFilePath": "/workspaces/Animals/Zadacha/Zadacha.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

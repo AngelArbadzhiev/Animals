@@ -16,6 +16,7 @@ public class Habitat
         GenerateGrass();
         Deer.OnDeerBorn += AddDeerKid;
         Wolf.OnWolfBorn += AddWolfKid;
+        Wolf.OnWolfDead += RemoveWolf;
     }
 
     private static int CurrentSeason { get; set; }
@@ -53,11 +54,14 @@ public class Habitat
 
     public void SeasonSimulator()
     {
+        int pastSeason = CurrentSeason - 1;
+        int nextSeason = CurrentSeason + 1;
         for (var i = CurrentSeason; i < 1000; i++)
         {
             AnimalDoingThings();
             for (var j = 0; j < CurrentSeason; j += _rnd.Next(0, 2)) GenerateGrass();
             CurrentSeason++;
+            
             if (CurrentSeason % 100 == 0) WritePopulation();
         }
 
@@ -141,5 +145,8 @@ public class Habitat
     private void AddWolfKid(Wolf kid)
     {
         _listWolves.Add(kid);
+    }
+    private void RemoveWolf(Wolf wolf){
+        _listWolves.Remove(wolf);
     }
 }
