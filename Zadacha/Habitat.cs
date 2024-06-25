@@ -86,6 +86,9 @@ public class Habitat
         for (var index = 0; index < ListDeer.Count; index++)
         {
             if (ListDeer.Count <= 1) continue;
+            else if(!ListDeer[index].IsFed && CurrentSeason != 0 && CurrentSeason % 2 == 0){
+                    ListDeer.Remove(ListDeer[index]);
+                }
             var mateIndex = 0;
             try
             {
@@ -104,19 +107,18 @@ public class Habitat
             ListDeer[index].HasMated = true;
             ListDeer[mateIndex].HasMated = true;
         }
-        for (int p = 20; p < ListDeer.Count; p+=2)
-        {
-            for (int i = 0; i < ListDeer.Count; i++)
-            {
-                if(!ListDeer[i].IsFed && CurrentSeason != 0 && CurrentSeason % 2 == 0){
+        for (int i = 0; i < ListDeer.Count; i++){
+            if(!ListDeer[i].IsFed && CurrentSeason != 0 && CurrentSeason % 2 == 0){
                     ListDeer.Remove(ListDeer[i]);
                 }
             }
-        }
 
         for (var index = 0; index < _listWolves.Count; index += _rnd.Next(1, 3))
         {
             if (ListDeer.Count <= 0) continue;
+            else if(!_listWolves[index].IsFed && CurrentSeason != 0 && CurrentSeason % 2 == 0){
+                    _listWolves.Remove(_listWolves[index]);
+                }
             var deerToChaseIndex = _rnd.Next(0, ListDeer.Count);
             var deerToChase = ListDeer[deerToChaseIndex];
             _listWolves[index].Chase(deerToChase);
@@ -145,16 +147,9 @@ public class Habitat
             _listWolves[i].HasMated = true;
             _listWolves[mateIndex].HasMated = true;
         }
-        for (int p = 10; p < _listWolves.Count; p+=2)
-        {
-            for (int i = 0; i < _listWolves.Count; i++)
-            {
-                if(!_listWolves[i].IsFed && CurrentSeason != 0 && CurrentSeason % 2 == 0){
-                    _listWolves.Remove(_listWolves[i]);
-                }
-            }
-        }
     }
+
+
 
     private void AddDeerKid(Deer kid)
     {
