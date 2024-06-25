@@ -35,7 +35,7 @@ public class Wolf : IPredator
     public void Mate(Wolf predator2)
     {
         if (!CanMate && predator2 is not { CanMate: true, HasMated: false } && !HasMated) return;
-        if (!IsFed || !predator2.IsFed) return;
+        
         var averageSpeedFromParents = (Speed + predator2.Speed) / 2;
         var _rnd = new Random();
         var doubleRnd = _rnd.NextDouble();
@@ -48,10 +48,9 @@ public class Wolf : IPredator
         wolvesPopulation++;
         OnWolfBorn?.Invoke(kid);
     }
-    public void CheckIsFed(Wolf wolf){
+    public void CheckIsFed(){
         if(!this.IsFed){
             OnWolfDead?.Invoke(this);
         }
-        OnWolfDead?.Invoke(wolf);
     }
 }

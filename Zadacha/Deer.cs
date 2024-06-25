@@ -52,6 +52,5 @@ public class Deer : IPrey
  
         OnDeerBorn?.Invoke(kid);
     }
-
     
 }

@@ -61,7 +61,6 @@ public class Habitat
             AnimalDoingThings();
             for (var j = 0; j < CurrentSeason; j += _rnd.Next(0, 2)) GenerateGrass();
             CurrentSeason++;
-            
             if (CurrentSeason % 100 == 0) WritePopulation();
         }
 
@@ -103,6 +102,15 @@ public class Habitat
             ListDeer[index].HasMated = true;
             ListDeer[mateIndex].HasMated = true;
         }
+        for (int p = 10; p < ListDeer.Count; p+=2)
+        {
+            for (int i = 0; i < ListDeer.Count; i++)
+            {
+                if(!ListDeer[i].IsFed){
+                    ListDeer.Remove(ListDeer[i]);
+                }
+            }
+        }
 
         for (var index = 0; index < _listWolves.Count; index += _rnd.Next(1, 3))
         {
@@ -134,6 +142,15 @@ public class Habitat
 
             _listWolves[i].HasMated = true;
             _listWolves[mateIndex].HasMated = true;
+        }
+        for (int p = 10; p < _listWolves.Count; p+=2)
+        {
+            for (int i = 0; i < _listWolves.Count; i++)
+            {
+                if(!_listWolves[i].IsFed){
+                    _listWolves.Remove(_listWolves[i]);
+                }
+            }
         }
     }
 
