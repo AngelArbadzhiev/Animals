@@ -106,7 +106,7 @@ public class Habitat
         {
             for (int i = 0; i < ListDeer.Count; i++)
             {
-                if(!ListDeer[i].IsFed){
+                if(!ListDeer[i].IsFed && CurrentSeason != 0 && CurrentSeason % 2 == 0){
                     ListDeer.Remove(ListDeer[i]);
                 }
             }
@@ -147,7 +147,7 @@ public class Habitat
         {
             for (int i = 0; i < _listWolves.Count; i++)
             {
-                if(!_listWolves[i].IsFed){
+                if(!_listWolves[i].IsFed && CurrentSeason != 0 && CurrentSeason % 2 == 0){
                     _listWolves.Remove(_listWolves[i]);
                 }
             }
