@@ -9,10 +9,11 @@ public class Habitat
     private readonly Random _rnd = new Random();
     public List<Deer> ListDeer = [];
 
-    public Habitat(int maxGrassForPrey, bool isSpeedCapped)
+    public Habitat(int maxGrassForPrey,int seasons, bool isSpeedCapped)
     {
-        MaxGrassForPrey = maxGrassForPrey;
-        IsSpeedCapped = isSpeedCapped;
+        this.MaxGrassForPrey = maxGrassForPrey;
+        this.IsSpeedCapped = isSpeedCapped;
+        this.Seasons = seasons;
         GenerateGrass();
         Deer.OnDeerBorn += AddDeerKid;
         Wolf.OnWolfBorn += AddWolfKid;
@@ -23,8 +24,8 @@ public class Habitat
 
     public bool IsSpeedCapped { get; set; }
     private static int Grass { get; set; }
-    public int MaxSpeed { get; set; }
     private int MaxGrassForPrey { get; }
+    private int Seasons {get;set;}
 
     private void GenerateGrass()
     {
@@ -33,8 +34,8 @@ public class Habitat
 
     public static void LowerGrass()
     {
-        var rnd = new Random();
-        Grass = Grass - rnd.Next(1, 3);
+        Random rnd = new Random();
+        Grass -= rnd.Next(1, 3);
     }
 
     public void GenerateAnimals()
@@ -56,12 +57,12 @@ public class Habitat
     {
         int pastSeason = CurrentSeason - 1;
         int nextSeason = CurrentSeason + 1;
-        for (var i = CurrentSeason; i < 1000; i++)
+        for (var i = CurrentSeason; i < Seasons; i++)
         {
             AnimalDoingThings();
             for (var j = 0; j < CurrentSeason; j += _rnd.Next(0, 2)) GenerateGrass();
             CurrentSeason++;
-            if (CurrentSeason % 100 == 0) WritePopulation();
+            if (CurrentSeason % (Seasons / 10) == 0) WritePopulation();
         }
 
         if (CurrentSeason % 2 != 0) return;
@@ -94,7 +95,7 @@ public class Habitat
                 
                 ListDeer[index].Mate(ListDeer[mateIndex]);
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException exception)
             {
                 mateIndex = _rnd.Next(0, ListDeer.Count);
             }
@@ -162,6 +163,9 @@ public class Habitat
     private void AddWolfKid(Wolf kid)
     {
         _listWolves.Add(kid);
+    }
+    private void RemoveDeer(Deer deer){
+        ListDeer.Remove(deer);
     }
     private void RemoveWolf(Wolf wolf){
         _listWolves.Remove(wolf);

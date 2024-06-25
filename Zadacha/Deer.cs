@@ -3,6 +3,7 @@ namespace Zadacha;
 public class Deer : IPrey
 {
     private Random _rnd = new Random();
+    private static int deerPopulation = 0;
 
     public Deer(int speed)
     {
@@ -13,15 +14,17 @@ public class Deer : IPrey
 
     private bool CanMate { get; set; }
     public bool HasMated { get; set; }
-    public static event Action<Deer> OnDeerBorn;
     public int Speed { get; set; }
     public bool IsFed { get; set; }
-
+    public static event Action<Deer> OnDeerBorn;
 
     public void Eat()
     {
         IsFed = true;
         Habitat.LowerGrass();
+    }
+    public static void LowerPopulation(){
+        deerPopulation--;
     }
 
     public void Mate(Deer partner)

@@ -2,7 +2,6 @@ namespace Zadacha;
 
 public class Wolf : IPredator
 {
-    private static int wolvesPopulation = 20;
     Random rnd = new Random();
 
     public Wolf(double speed)
@@ -25,7 +24,7 @@ public class Wolf : IPredator
     public void Chase(IPrey prey)
     {
         if (this.Speed <= prey.Speed) return;
-        Deer.DeerPopulationMinus();
+        Deer.LowerPopulation();
         Eat();
     }
 
@@ -44,7 +43,6 @@ public class Wolf : IPredator
         HasMated = true;
         predator2.HasMated = true;
         kid.CanMate = false;
-        wolvesPopulation++;
         OnWolfBorn?.Invoke(kid);
     }
 
