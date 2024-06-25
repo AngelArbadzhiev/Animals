@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Zadacha;
@@ -164,10 +165,5 @@ public class Habitat
     {
         _listWolves.Add(kid);
     }
-    private void RemoveDeer(Deer deer){
-        ListDeer.Remove(deer);
-    }
-    private void RemoveWolf(Wolf wolf){
-        _listWolves.Remove(wolf);
-    }
+   
 }
