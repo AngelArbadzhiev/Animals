@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zadacha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51fa089d41cb8479045a175de65a654ff2698873")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7fee3e7f0b33679e8fcbcc2bde642ca89bb0929")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zadacha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zadacha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

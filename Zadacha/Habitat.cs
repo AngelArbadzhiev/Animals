@@ -102,7 +102,7 @@ public class Habitat
             ListDeer[index].HasMated = true;
             ListDeer[mateIndex].HasMated = true;
         }
-        for (int p = 10; p < ListDeer.Count; p+=2)
+        for (int p = 20; p < ListDeer.Count; p+=2)
         {
             for (int i = 0; i < ListDeer.Count; i++)
             {
