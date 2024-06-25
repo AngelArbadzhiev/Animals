@@ -16,7 +16,7 @@ public class Habitat
         GenerateGrass();
         Deer.OnDeerBorn += AddDeerKid;
         Wolf.OnWolfBorn += AddWolfKid;
-        Wolf.OnWolfDead += RemoveWolf;
+
     }
 
     private static int CurrentSeason { get; set; }

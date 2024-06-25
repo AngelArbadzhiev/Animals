@@ -30,7 +30,6 @@ public class Wolf : IPredator
     }
 
     public static event Action<Wolf> OnWolfBorn;
-    public static event Action<Wolf> OnWolfDead;
 
     public void Mate(Wolf predator2)
     {
@@ -48,9 +47,5 @@ public class Wolf : IPredator
         wolvesPopulation++;
         OnWolfBorn?.Invoke(kid);
     }
-    public void CheckIsFed(){
-        if(!this.IsFed){
-            OnWolfDead?.Invoke(this);
-        }
-    }
+
 }
